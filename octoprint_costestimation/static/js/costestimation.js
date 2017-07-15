@@ -35,7 +35,7 @@ $(function() {
             var element = $("#state").find("hr:nth-of-type(2)");
             if (element.length) {
                 var name = gettext("Cost");
-                var text = gettext("Estimated cost based on required quantity of filament and print time");
+                var text = gettext("Estimated print cost based on required quantity of filament and print time");
                 element.before("<span title='" + text + "'>" + name + "</span>: "
                                 + "<strong id='costestimation' data-bind='text: estimatedCostString'></strong>"
                                 + "<br>");

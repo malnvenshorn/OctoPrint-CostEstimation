@@ -1,0 +1,56 @@
+# Translations template for OctoPrint-CostEstimation.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the
+# OctoPrint-CostEstimation project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OctoPrint-CostEstimation 0.1.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-07-15 22:02+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: octoprint_costestimation/static/js/costestimation.js:37
+msgid "Cost"
+msgstr ""
+
+#: octoprint_costestimation/static/js/costestimation.js:38
+msgid "Estimated print cost based on required quantity of filament and print time"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:3
+msgid "Filament"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:6
+msgid "Price"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:17
+msgid "Weight"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:28
+msgid "Density"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:38
+msgid "Operating costs"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:41
+msgid "Power consumption"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:52
+msgid "Electricity costs"
+msgstr ""
+
