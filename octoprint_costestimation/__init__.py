@@ -1,6 +1,10 @@
 # coding=utf-8
 from __future__ import absolute_import
 
+__author__ = "Sven Lohrmann <malnvenshorn@gmail.com>"
+__license__ = "GNU Affero General Public License http://www.gnu.org/licenses/agpl.html"
+__copyright__ = "Copyright (C) 2017 Sven Lohrmann - Released under terms of the AGPLv3 License"
+
 import octoprint.plugin
 
 
@@ -30,7 +34,7 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
     def get_update_information(self):
         return dict(
             costestimation=dict(
-                displayName="Cost Estimation",
+                displayName="CostEstimation",
                 displayVersion=self._plugin_version,
 
                 # version check: github repository
@@ -45,7 +49,7 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
         )
 
 
-__plugin_name__ = "Cost Estimation"
+__plugin_name__ = "CostEstimation"
 
 
 def __plugin_load__():

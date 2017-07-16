@@ -1,7 +1,7 @@
 /*
  * View model for OctoPrint-CostEstimation
  *
- * Author: Sven Lohrmann
+ * Author: Sven Lohrmann <malnvenshorn@gmail.com>
  * License: AGPLv3
  */
 
