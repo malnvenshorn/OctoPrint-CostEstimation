@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OctoPrint-CostEstimation 0.1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-07-15 22:02+0200\n"
-"PO-Revision-Date: 2017-07-15 22:05+0200\n"
+"POT-Creation-Date: 2017-07-18 21:41+0200\n"
+"PO-Revision-Date: 2017-07-18 21:42+0200\n"
 "Last-Translator: \n"
 "Language: de\n"
 "Language-Team: de <LL@li.org>\n"
@@ -26,7 +26,9 @@ msgstr "Kosten"
 
 #: octoprint_costestimation/static/js/costestimation.js:38
 msgid "Estimated print cost based on required quantity of filament and print time"
-msgstr "Geschätzte Druckkosten basierend auf der benötigten Menge an Filamant und der Druckzeit"
+msgstr ""
+"Geschätzte Druckkosten basierend auf der benötigten Menge an Filamant und der "
+"Druckzeit"
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:3
 msgid "Filament"
@@ -45,7 +47,8 @@ msgid "Density"
 msgstr "Dichte"
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:38
-msgid "Operating costs"
+#, fuzzy
+msgid "Operating cost"
 msgstr "Betriebskosten"
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:41
@@ -53,5 +56,14 @@ msgid "Power consumption"
 msgstr "Stromverbrauch"
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:52
-msgid "Electricity costs"
+#, fuzzy
+msgid "Electricity cost"
 msgstr "Stromkosten"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:64
+msgid "Misc"
+msgstr "Sonstiges"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:67
+msgid "Currency"
+msgstr "Währung"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OctoPrint-CostEstimation 0.1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-07-15 22:02+0200\n"
+"POT-Creation-Date: 2017-07-18 21:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,7 @@ msgid "Density"
 msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:38
-msgid "Operating costs"
+msgid "Operating cost"
 msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:41
@@ -51,6 +51,14 @@ msgid "Power consumption"
 msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:52
-msgid "Electricity costs"
+msgid "Electricity cost"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:64
+msgid "Misc"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:67
+msgid "Currency"
 msgstr ""
 

@@ -8,7 +8,7 @@
             <div class="input-append">
                 <input type="number" step="0.01" min="0" class="input-mini text-right"
                     data-bind="value: settings.plugins.costestimation.costOfFilament">
-                <span class="add-on">€</span>
+                <span class="add-on" data-bind="text: settings.plugins.costestimation.currency"></span>
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <h3>{{ _("Operating costs") }}</h3>
+    <h3>{{ _("Operating cost") }}</h3>
 
     <div class="control-group">
         <label class="control-label">{{ _('Power consumption') }}</label>
@@ -49,13 +49,25 @@
     </div>
 
     <div class="control-group">
-        <label class="control-label">{{ _('Electricity costs') }}</label>
+        <label class="control-label">{{ _('Electricity cost') }}</label>
         <div class="controls">
             <div class="input-append">
                 <input type="number" step="0.01" min="0" class="input-mini text-right"
                     data-bind="value: settings.plugins.costestimation.costOfElectricity">
-                <span class="add-on">€/kWh</span>
+                <span class="add-on">
+                    <span data-bind="text: settings.plugins.costestimation.currency"></span>/kWh
+                </span>
             </div>
+        </div>
+    </div>
+
+    <h3>{{ _('Misc') }}</h3>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Currency') }}</label>
+        <div class="controls">
+            <input type="text" class="input-mini text-center"
+                data-bind="value: settings.plugins.costestimation.currency">
         </div>
     </div>
 
