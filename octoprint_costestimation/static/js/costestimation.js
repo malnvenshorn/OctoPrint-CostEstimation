@@ -28,7 +28,9 @@ $(function() {
             var estimatedPrintTime = self.printerState.estimatedPrintTime() / 3600;  // h
             var estimatedCost = costPerWeight * filamentVolume * densityOfFilament + costPerHour * estimatedPrintTime;
 
-            return "" + estimatedCost.toFixed(2) + self.settings.settings.plugins.costestimation.currency();
+            var currencySymbol = self.settings.settings.plugins.costestimation.currency();
+            var currencyFormat = self.settings.settings.plugins.costestimation.currencyFormat();
+            return currencyFormat.replace("%v", estimatedCost.toFixed(2)).replace("%s", currencySymbol);
         });
 
         self.onBeforeBinding = function() {

@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <h3>{{ _("Operating cost") }}</h3>
+    <h3>{{ _("Operating Cost") }}</h3>
 
     <div class="control-group">
         <label class="control-label">{{ _('Power consumption') }}</label>
@@ -61,13 +61,21 @@
         </div>
     </div>
 
-    <h3>{{ _('Misc') }}</h3>
+    <h3>{{ _('Currency Format') }}</h3>
 
     <div class="control-group">
-        <label class="control-label">{{ _('Currency') }}</label>
+        <label class="control-label">{{ _('Symbol') }}</label>
         <div class="controls">
             <input type="text" class="input-mini text-center"
                 data-bind="value: settings.plugins.costestimation.currency">
+        </div>
+    </div>
+
+    <div class="control-group" title="{{ _('Format string that allows control of symbol position (%%v = value, %%s = symbol)') }}">
+        <label class="control-label">{{ _('Format') }}</label>
+        <div class="controls">
+            <input type="text" class="input-mini text-center"
+                data-bind="value: settings.plugins.costestimation.currencyFormat">
         </div>
     </div>
 

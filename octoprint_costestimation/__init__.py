@@ -19,7 +19,8 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
             densityOfFilament=1.32,     # g/cm³
             powerConsumption=0.2,       # kWh
             costOfElectricity=0.25,     # €/kWh
-            currency="€"
+            currency="€",
+            currencyFormat="%v %s"       # %v - value, %s - currency symbol
         )
 
     def get_template_configs(self):
