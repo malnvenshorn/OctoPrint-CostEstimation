@@ -7,9 +7,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: OctoPrint-CostEstimation 0.2.0\n"
+"Project-Id-Version: OctoPrint-CostEstimation 0.4.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-07-21 17:15+0200\n"
+"POT-Creation-Date: 2017-07-24 10:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
 
-#: octoprint_costestimation/static/js/costestimation.js:39
+#: octoprint_costestimation/static/js/costestimation.js:53
 msgid "Cost"
 msgstr ""
 
-#: octoprint_costestimation/static/js/costestimation.js:40
+#: octoprint_costestimation/static/js/costestimation.js:54
 msgid "Estimated print cost based on required quantity of filament and print time"
 msgstr ""
 
@@ -42,34 +42,38 @@ msgstr ""
 msgid "Density"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:38
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:39
+msgid "Diameter"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:49
 msgid "Operating Cost"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:41
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:52
 msgid "Power consumption"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:52
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:63
 msgid "Electricity cost"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:64
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:75
 msgid "Currency Format"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:67
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:78
 msgid "Symbol"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:74
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:85
 #, python-format
 msgid ""
 "Format string that allows control of symbol position (%%v = value, %%s = "
 "symbol)"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:75
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:86
 msgid "Format"
 msgstr ""
 
