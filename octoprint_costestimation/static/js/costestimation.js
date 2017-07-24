@@ -13,23 +13,37 @@ $(function() {
         self.settings = parameters[1];
 
         self.estimatedCostString = ko.pureComputed(function() {
-            if (self.printerState.filename() == undefined || self.printerState.filament().length == 0) {
-                return "-";
+            if (self.printerState.filename() === undefined) return "-";
+            if (self.printerState.filament().length == 0) return "-";
+
+            var pluginSettings = self.settings.settings.plugins.costestimation;
+
+            // calculating filament cost
+            var costOfFilament = pluginSettings.costOfFilament();
+            var weightOfFilament = pluginSettings.weightOfFilament();
+            var densityOfFilament = pluginSettings.densityOfFilament();
+            var diameterOfFilament = pluginSettings.diameterOfFilament();
+            var costPerWeight = costOfFilament / weightOfFilament;
+            var filamentVolume = self.printerState.filament()[0].data().volume;      // cm³
+
+            if (filamentVolume == 0) {
+                filamentVolume = self.printerState.filament()[0].data().length / 10
+                    * Math.PI * Math.pow((diameterOfFilament/10)/2, 2);
             }
 
-            var costOfFilament = self.settings.settings.plugins.costestimation.costOfFilament();
-            var weightOfFilament =  self.settings.settings.plugins.costestimation.weightOfFilament();
-            var densityOfFilament = self.settings.settings.plugins.costestimation.densityOfFilament();
-            var powerConsumption = self.settings.settings.plugins.costestimation.powerConsumption();
-            var costOfElectricity = self.settings.settings.plugins.costestimation.costOfElectricity();
-            var costPerWeight = costOfFilament / weightOfFilament;
-            var costPerHour = powerConsumption * costOfElectricity;
-            var filamentVolume = self.printerState.filament()[0].data().volume;      // cm³
-            var estimatedPrintTime = self.printerState.estimatedPrintTime() / 3600;  // h
-            var estimatedCost = costPerWeight * filamentVolume * densityOfFilament + costPerHour * estimatedPrintTime;
+            var filamentCost = costPerWeight * filamentVolume * densityOfFilament;
 
-            var currencySymbol = self.settings.settings.plugins.costestimation.currency();
-            var currencyFormat = self.settings.settings.plugins.costestimation.currencyFormat();
+            // calculating electricity cost
+            var powerConsumption = pluginSettings.powerConsumption();
+            var costOfElectricity = pluginSettings.costOfElectricity();
+            var costPerHour = powerConsumption * costOfElectricity;
+            var estimatedPrintTime = self.printerState.estimatedPrintTime() / 3600;  // h
+            var electricityCost = costPerHour * estimatedPrintTime;
+
+            // assembling string
+            var estimatedCost = filamentCost + electricityCost;
+            var currencySymbol = pluginSettings.currency();
+            var currencyFormat = pluginSettings.currencyFormat();
             return currencyFormat.replace("%v", estimatedCost.toFixed(2)).replace("%s", currencySymbol);
         });
 

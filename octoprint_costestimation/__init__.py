@@ -16,7 +16,8 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
         return dict(
             weightOfFilament=1000,      # g
             costOfFilament=20,          # €
-            densityOfFilament=1.32,     # g/cm³
+            densityOfFilament=1.25,     # g/cm³
+            diameterOfFilament=1.75,    # mm
             powerConsumption=0.2,       # kWh
             costOfElectricity=0.25,     # €/kWh
             currency="€",
