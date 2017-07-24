@@ -125,18 +125,21 @@ $(function() {
 
             // calculating filament cost
             var tool0 = pluginSettings.selectedFilament.tool0();
-            var filament = ko.utils.arrayFirst(self.filaments(), function(item){ return item.id() === tool0; });
+            var filament = ko.utils.arrayFirst(self.filaments(),
+                function(item){ return item.id() == tool0; });
+
+            if (filament == null) return "-";
 
             var costOfFilament = filament.cost();
             var weightOfFilament =  filament.weight();
             var densityOfFilament = filament.density();
-            var diameterOfFilament = filament.diameter();
             var costPerWeight = costOfFilament / weightOfFilament;
             var filamentVolume = self.printerState.filament()[0].data().volume;      // cm³
 
             if (filamentVolume == 0) {
-                filamentVolume = self.printerState.filament()[0].data().length / 10
-                    * Math.PI * Math.pow((diameterOfFilament/10)/2, 2);
+                var h = self.printerState.filament()[0].data().length / 10;          // cm
+                var r = (filament.diameter() / 10) / 2;                              // cm
+                filamentVolume = h * Math.PI * Math.pow(r, 2);
             }
 
             var filamentCost = costPerWeight * filamentVolume * densityOfFilament;
