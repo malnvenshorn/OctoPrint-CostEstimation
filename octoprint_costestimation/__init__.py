@@ -14,24 +14,32 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
 
     def get_settings_defaults(self):
         return dict(
-            weightOfFilament=1000,      # g
-            costOfFilament=20,          # €
-            densityOfFilament=1.25,     # g/cm³
-            diameterOfFilament=1.75,    # mm
+            lastId=0,
+            filaments=[
+                dict(
+                    id=0,
+                    name="_default_",
+                    weight=1000,        # g
+                    cost=20,            # €
+                    density=1.25,       # g/cm³
+                    diameter=1.75       # mm
+                )],
+            selectedFilament=dict(tool0=0),
             powerConsumption=0.2,       # kWh
             costOfElectricity=0.25,     # €/kWh
             currency="€",
-            currencyFormat="%v %s"       # %v - value, %s - currency symbol
+            currencyFormat="%v %s"      # %v - value, %s - currency symbol
         )
 
     def get_template_configs(self):
         return [
-            dict(type="settings", custom_bindings=False)
+            dict(type="settings", custom_bindings=True),
+            dict(type="generic", template="costestimation_filamentdialog.jinja2", custom_bindings=True)
         ]
 
     def get_assets(self):
         return dict(
-            js=["js/costestimation.js"]
+            js=["js/costestimation.js", "js/ko.observableDictionary.js"]
         )
 
     def get_update_information(self):
