@@ -50,6 +50,10 @@ $(function() {
         self.onBeforeBinding = function() {
             self.filaments = self.settings.settings.plugins.costestimation.filaments;
             self.editor = new FilamentEditorViewModel(self.filaments);
+            self._readExtruderCount();
+            self.settings.printerProfiles.currentProfileData.subscribe(function() {
+                self._readExtruderCount();
+            });
         };
 
         self.showFilamentDialog = function() {
@@ -79,16 +83,22 @@ $(function() {
             self.editor.loadData(nextId);
         };
 
-        self.settings.printerProfiles.currentProfileData.subscribe(function() {
-            self._printerProfileUpdated();
-        });
-
-        self._printerProfileUpdated = function() {
+        self._readExtruderCount = function() {
             var currentProfileData = self.settings.printerProfiles.currentProfileData();
-            // var numExtruders = (currentProfileData ? currentProfileData.extruder.count() : 0);
-            var numExtruders = (currentProfileData ? 1 : 0);
+            var numExtruders = (currentProfileData ? currentProfileData.extruder.count() : 0);
+            // var numExtruders = (currentProfileData ? 1 : 0);
             self.tools(new Array(numExtruders));
 
+            var selectedFilament = self.settings.settings.plugins.costestimation.selectedFilament;
+            var selectedFilamentCount = Object.keys(selectedFilament).length;
+
+            if (selectedFilamentCount < numExtruders) {
+                // add observables for new tools
+                for(var i = selectedFilamentCount; i < numExtruders; ++i) {
+                    var id = "tool" + i;
+                    selectedFilament[id] = ko.observable(0);
+                }
+            }
         };
     }
 

@@ -20,25 +20,28 @@ $(function() {
             var pluginSettings = self.settings.settings.plugins.costestimation;
 
             // calculating filament cost
-            var filamentId = pluginSettings.selectedFilament.tool0();
-            var filament = ko.utils.arrayFirst(pluginSettings.filaments(),
-                function(item){ return item.id() == filamentId; });
+            var filamentCost = 0;
 
-            if (filament == null) return "-";
+            for (var i = 0; i < self.printerState.filament().length; ++i) {
+                var tool = "tool" + i;
+                var filamentId = pluginSettings.selectedFilament[tool];
+                var filament = ko.utils.arrayFirst(pluginSettings.filaments(),
+                    function(item){ return item.id() == filamentId(); });
 
-            var costOfFilament = filament.cost();
-            var weightOfFilament =  filament.weight();
-            var densityOfFilament = filament.density();
-            var costPerWeight = costOfFilament / weightOfFilament;
-            var filamentVolume = self.printerState.filament()[0].data().volume;      // cm³
+                var costOfFilament = filament.cost();
+                var weightOfFilament =  filament.weight();
+                var densityOfFilament = filament.density();
+                var costPerWeight = costOfFilament / weightOfFilament;
+                var filamentVolume = self.printerState.filament()[0].data().volume;      // cm³
 
-            if (filamentVolume == 0) {
-                var h = self.printerState.filament()[0].data().length / 10;          // cm
-                var r = (filament.diameter() / 10) / 2;                              // cm
-                filamentVolume = h * Math.PI * Math.pow(r, 2);
+                if (filamentVolume == 0) {
+                    var h = self.printerState.filament()[0].data().length / 10;          // cm
+                    var r = (filament.diameter() / 10) / 2;                              // cm
+                    filamentVolume = h * Math.PI * Math.pow(r, 2);
+                }
+
+                filamentCost += costPerWeight * filamentVolume * densityOfFilament;
             }
-
-            var filamentCost = costPerWeight * filamentVolume * densityOfFilament;
 
             // calculating electricity cost
             var powerConsumption = pluginSettings.powerConsumption();

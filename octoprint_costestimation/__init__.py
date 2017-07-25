@@ -26,7 +26,7 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
                     density=1.25,       # g/cm³
                     diameter=1.75       # mm
                 )],
-            selectedFilament=dict(tool0=0),
+            selectedFilament=dict(),
             powerConsumption=0.2,       # kWh
             costOfElectricity=0.25,     # €/kWh
             currency="€",
