@@ -43,11 +43,11 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
 
             filaments = self._settings.get(["filaments"])
 
-            for prop in settings:
-                value = self._settings.get([prop])
+            for entry in settings:
+                value = self._settings.get([entry])
                 if value is not None:
-                    filaments[0][prop.replace("OfFilament", "")] = value
-                    self._settings.set([prop], None)
+                    filaments[0][entry.replace("OfFilament", "")] = value
+                    self._settings.set([entry], None)
 
             self._settings.set(["filaments"], filaments)
 
@@ -55,15 +55,15 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
 
     def get_template_configs(self):
         return [
-            dict(type="settings", custom_bindings=True),
-            dict(type="generic", template="costestimation_filamentdialog.jinja2", custom_bindings=True)
+            dict(type="settings", template="costestimation_settings.jinja2"),
+            dict(type="generic", template="costestimation_filamentdialog.jinja2")
         ]
 
     # AssetPlugin
 
     def get_assets(self):
         return dict(
-            js=["js/costestimation.js"]
+            js=["js/costestimation.js", "js/costestimation_settings.js"]
         )
 
     # SoftwareUpdate
