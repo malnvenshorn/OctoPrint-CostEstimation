@@ -86,7 +86,6 @@ $(function() {
         self._readExtruderCount = function() {
             var currentProfileData = self.settings.printerProfiles.currentProfileData();
             var numExtruders = (currentProfileData ? currentProfileData.extruder.count() : 0);
-            // var numExtruders = (currentProfileData ? 1 : 0);
             self.tools(new Array(numExtruders));
 
             var selectedFilament = self.settings.settings.plugins.costestimation.selectedFilament;

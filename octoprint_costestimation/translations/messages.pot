@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OctoPrint-CostEstimation 0.4.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-07-24 10:47+0200\n"
+"POT-Creation-Date: 2017-07-25 23:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,62 +18,87 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
 
-#: octoprint_costestimation/static/js/costestimation.js:53
+#: octoprint_costestimation/static/js/costestimation.js:63
 msgid "Cost"
 msgstr ""
 
-#: octoprint_costestimation/static/js/costestimation.js:54
+#: octoprint_costestimation/static/js/costestimation.js:64
 msgid "Estimated print cost based on required quantity of filament and print time"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:3
-msgid "Filament"
+#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:5
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:4
+msgid "Manage Filament"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:6
+#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:12
+msgid "New"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:13
+msgid "Delete"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:21
+msgid "Name"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:30
 msgid "Price"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:17
+#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:40
 msgid "Weight"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:28
+#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:50
 msgid "Density"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:39
+#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:60
 msgid "Diameter"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:49
+#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:73
+msgid "Close"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:7
+msgid "Filament"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:11
+msgid "Tool"
+msgstr ""
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:18
 msgid "Operating Cost"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:52
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:21
 msgid "Power consumption"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:63
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:31
 msgid "Electricity cost"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:75
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:40
 msgid "Currency Format"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:78
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:43
 msgid "Symbol"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:85
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:49
 #, python-format
 msgid ""
 "Format string that allows control of symbol position (%%v = value, %%s = "
 "symbol)"
 msgstr ""
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:86
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:50
 msgid "Format"
 msgstr ""
 
