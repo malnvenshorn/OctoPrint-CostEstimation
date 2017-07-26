@@ -11,7 +11,8 @@ $(function() {
         var self = this;
 
         self.filaments = filaments;
-        self.selected = ko.observable(undefined);
+
+        self.selected = ko.observable();
 
         self.name = ko.observable();
         self.cost = ko.observable();
@@ -19,17 +20,51 @@ $(function() {
         self.density = ko.observable();
         self.diameter = ko.observable();
 
+        self.index = undefined;
+
         self.loadData = function(id){
-            self.filaments().forEach(function(item) {
+            self.index = undefined;
+            self.filaments().forEach(function(item, index) {
                 if (item.id() == id) {
-                    self.name(item.name);
-                    self.cost(item.cost);
-                    self.weight(item.weight);
-                    self.density(item.density);
-                    self.diameter(item.diameter);
+                    self.index = index;
+                    self.name(item.name());
+                    self.cost(item.cost());
+                    self.weight(item.weight());
+                    self.density(item.density());
+                    self.diameter(item.diameter());
                 }
             });
         };
+
+        self.name.subscribe(function(){
+            if (self.index != undefined) {
+                self.filaments()[self.index].name(self.name());
+            }
+        });
+
+        self.cost.subscribe(function(){
+            if (self.index != undefined) {
+                self.filaments()[self.index].cost(self.cost());
+            }
+        });
+
+        self.weight.subscribe(function(){
+            if (self.index != undefined) {
+                self.filaments()[self.index].weight(self.weight());
+            }
+        });
+
+        self.density.subscribe(function(){
+            if (self.index != undefined) {
+                self.filaments()[self.index].density(self.density());
+            }
+        });
+
+        self.diameter.subscribe(function(){
+            if (self.index != undefined) {
+                self.filaments()[self.index].diameter(self.diameter());
+            }
+        });
     }
 
     function CostEstimationSettingsViewModel(parameters) {
