@@ -32,10 +32,10 @@ $(function() {
                 var weightOfFilament =  filament.weight();
                 var densityOfFilament = filament.density();
                 var costPerWeight = costOfFilament / weightOfFilament;
-                var filamentVolume = self.printerState.filament()[0].data().volume;      // cm³
+                var filamentVolume = self.printerState.filament()[i].data().volume;      // cm³
 
                 if (filamentVolume == 0) {
-                    var h = self.printerState.filament()[0].data().length / 10;          // cm
+                    var h = self.printerState.filament()[i].data().length / 10;          // cm
                     var r = (filament.diameter() / 10) / 2;                              // cm
                     filamentVolume = h * Math.PI * Math.pow(r, 2);
                 }
