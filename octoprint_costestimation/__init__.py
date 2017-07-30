@@ -30,7 +30,8 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
             powerConsumption=0.2,       # kWh
             costOfElectricity=0.25,     # €/kWh
             currency="€",
-            currencyFormat="%v %s"      # %v - value, %s - currency symbol
+            currencyFormat="%v %s",     # %v - value, %s - currency symbol
+            requiresLogin=False
         )
 
     def get_settings_version(self):

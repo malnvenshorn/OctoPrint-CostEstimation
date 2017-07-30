@@ -37,19 +37,27 @@
         </div>
     </div>
 
-    <h3>{{ _('Currency Format') }}</h3>
+    <h3>{{ _('Appearance') }}</h3>
 
     <div class="control-group">
-        <label class="control-label">{{ _('Symbol') }}</label>
+        <label class="control-label">{{ _('Currency symbol') }}</label>
         <div class="controls">
             <input type="text" class="input-mini text-center" data-bind="value: $root.settings.settings.plugins.costestimation.currency, valueUpdate: 'afterkeydown'">
         </div>
     </div>
 
     <div class="control-group" title="{{ _('Format string that allows control of symbol position (%%v = value, %%s = symbol)') }}">
-        <label class="control-label">{{ _('Format') }}</label>
+        <label class="control-label">{{ _('String format') }}</label>
         <div class="controls">
             <input type="text" class="input-mini text-center" data-bind="value: $root.settings.settings.plugins.costestimation.currencyFormat">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <label class="checkbox">
+                <input type="checkbox" data-bind="checked: $root.settings.settings.plugins.costestimation.requiresLogin">{{ _("Show estimated cost only if logged in") }}
+            </label>
         </div>
     </div>
 

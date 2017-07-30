@@ -12,8 +12,15 @@ $(function() {
 
         self.printerState = parameters[0];
         self.settings = parameters[1];
+        self.loginState = parameters[2];
+
+        self.showEstimatedCost = ko.pureComputed(function() {
+            return self.settings.settings.plugins.costestimation.requiresLogin() ?
+                self.loginState.isUser() : true;
+        });
 
         self.estimatedCostString = ko.pureComputed(function() {
+            if (!self.showEstimatedCost()) return "-";
             if (self.printerState.filename() === undefined) return "-";
             if (self.printerState.filament().length == 0) return "-";
 
@@ -62,16 +69,14 @@ $(function() {
             if (element.length) {
                 var name = gettext("Cost");
                 var text = gettext("Estimated print cost based on required quantity of filament and print time");
-                element.before("<span title='" + text + "'>" + name + "</span>: "
-                                + "<strong id='costestimation_string' data-bind='text: estimatedCostString'></strong>"
-                                + "<br>");
+                element.before("<div id='costestimation_string' data-bind='visible: showEstimatedCost()'><span title='" + text + "'>" + name + "</span>: <strong data-bind='text: estimatedCostString'></strong></div>");
             }
         };
     }
 
     OCTOPRINT_VIEWMODELS.push({
         construct: CostEstimationViewModel,
-        dependencies: ["printerStateViewModel", "settingsViewModel"],
+        dependencies: ["printerStateViewModel", "settingsViewModel", "loginStateViewModel"],
         elements: ["#costestimation_string"]
     });
 });
