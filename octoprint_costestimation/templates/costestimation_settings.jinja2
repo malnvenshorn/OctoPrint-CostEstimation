@@ -1,27 +1,12 @@
 <form class="form-horizontal">
 
-    <div class="pull-right">
-        <button class="btn btn-small" title="{{ _('Manage Filament') }}" data-bind="click: function() { showFilamentDialog(); }"><span class="icon-pencil"></span></button>
-    </div>
-
-    <h3>{{ _("Filament") }}</h3>
-
-     <!-- ko foreach: tools -->
-        <div class="control-group">
-            <label class="control-label">{{ _('Tool') }} <span data-bind="text: $index"></span></label>
-            <div class="controls">
-                <select data-bind="options: $root.filaments, optionsText: function(item) { return item.name; }, optionsValue: function(item) { return item.id; }, value: $root.settings.settings.plugins.costestimation.selectedFilament['tool'+($index())]"></select>
-            </div>
-        </div>
-    <!-- /ko -->
-
     <h3>{{ _("Operating Cost") }}</h3>
 
     <div class="control-group">
         <label class="control-label">{{ _('Power consumption') }}</label>
         <div class="controls">
             <div class="input-append">
-                <input type="number" step="0.01" min="0" class="input-mini text-right" data-bind="value: $root.settings.settings.plugins.costestimation.powerConsumption">
+                <input type="number" step="0.01" min="0" class="input-mini text-right" data-bind="value: settings.plugins.costestimation.powerConsumption">
                 <span class="add-on">kW</span>
             </div>
         </div>
@@ -31,8 +16,8 @@
         <label class="control-label">{{ _('Electricity cost') }}</label>
         <div class="controls">
             <div class="input-append">
-                <input type="number" step="0.01" min="0" class="input-mini text-right"data-bind="value: $root.settings.settings.plugins.costestimation.costOfElectricity">
-                <span class="add-on"><span data-bind="text: $root.settings.settings.plugins.costestimation.currency"></span>/kWh</span>
+                <input type="number" step="0.01" min="0" class="input-mini text-right"data-bind="value: settings.plugins.costestimation.costOfElectricity">
+                <span class="add-on"><span data-bind="text: settings.plugins.costestimation.currency"></span>/kWh</span>
             </div>
         </div>
     </div>
@@ -42,21 +27,21 @@
     <div class="control-group">
         <label class="control-label">{{ _('Currency symbol') }}</label>
         <div class="controls">
-            <input type="text" class="input-mini text-center" data-bind="value: $root.settings.settings.plugins.costestimation.currency, valueUpdate: 'afterkeydown'">
+            <input type="text" class="input-mini text-center" data-bind="value: settings.plugins.costestimation.currency, valueUpdate: 'afterkeydown'">
         </div>
     </div>
 
     <div class="control-group" title="{{ _('Format string that allows control of symbol position (%%v = value, %%s = symbol)') }}">
         <label class="control-label">{{ _('String format') }}</label>
         <div class="controls">
-            <input type="text" class="input-mini text-center" data-bind="value: $root.settings.settings.plugins.costestimation.currencyFormat">
+            <input type="text" class="input-mini text-center" data-bind="value: settings.plugins.costestimation.currencyFormat">
         </div>
     </div>
 
     <div class="control-group">
         <div class="controls">
             <label class="checkbox">
-                <input type="checkbox" data-bind="checked: $root.settings.settings.plugins.costestimation.requiresLogin">{{ _("Show estimated cost only if logged in") }}
+                <input type="checkbox" data-bind="checked: settings.plugins.costestimation.requiresLogin">{{ _("Show estimated cost only if logged in") }}
             </label>
         </div>
     </div>

@@ -12,11 +12,12 @@ plugin_author = "Sven Lohrmann"
 plugin_author_email = "malnvenshorn@gmail.com"
 plugin_url = "https://github.com/malnvenshorn/OctoPrint-CostEstimation"
 plugin_license = "AGPLv3"
-plugin_requires = []
+plugin_requires = ["octoprint_filamentmanager"]
 plugin_additional_data = []
 plugin_additional_packages = []
 plugin_ignored_packages = []
-additional_setup_parameters = {}
+additional_setup_parameters = {"dependency_links": [
+    "https://github.com/malnvenshorn/OctoPrint-FilamentManager/archive/master.zip#egg=octoprint_filamentmanager"]}
 
 ####################################################################################################
 

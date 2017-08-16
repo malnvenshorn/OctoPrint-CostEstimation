@@ -16,17 +16,6 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
 
     def get_settings_defaults(self):
         return dict(
-            lastId=0,
-            filaments=[
-                dict(
-                    id=0,
-                    name="_default_",
-                    weight=1000,        # g
-                    cost=20,            # €
-                    density=1.25,       # g/cm³
-                    diameter=1.75       # mm
-                )],
-            selectedFilament=dict(),
             powerConsumption=0.2,       # kWh
             costOfElectricity=0.25,     # €/kWh
             currency="€",
@@ -35,10 +24,10 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
         )
 
     def get_settings_version(self):
-        return 2
+        return 3
 
     def on_settings_migrate(self, target, current=None):
-        if current is None:
+        if current is None or current == 1:
             # migrate old settings
             settings = ["weightOfFilament", "costOfFilament", "densityOfFilament", "diameterOfFilament"]
 
@@ -51,20 +40,23 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
                     self._settings.set([entry], None)
 
             self._settings.set(["filaments"], filaments)
+        elif current == 2:
+            self._settings.set(["filaments"], None)
+            self._settings.set(["selectedFilament"], None)
+            self._settings.set(["lastId"], None)
 
     # TemplatePlugin
 
     def get_template_configs(self):
         return [
-            dict(type="settings", template="costestimation_settings.jinja2"),
-            dict(type="generic", template="costestimation_filamentdialog.jinja2")
+            dict(type="settings", custom_bindings=False)
         ]
 
     # AssetPlugin
 
     def get_assets(self):
         return dict(
-            js=["js/costestimation.js", "js/costestimation_settings.js"]
+            js=["js/costestimation.js"]
         )
 
     # SoftwareUpdate
@@ -72,7 +64,7 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
     def get_update_information(self):
         return dict(
             costestimation=dict(
-                displayName="CostEstimation",
+                displayName="Cost Estimation",
                 displayVersion=self._plugin_version,
 
                 # version check: github repository
@@ -87,7 +79,7 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
         )
 
 
-__plugin_name__ = "CostEstimation"
+__plugin_name__ = "Cost Estimation"
 
 
 def __plugin_load__():
