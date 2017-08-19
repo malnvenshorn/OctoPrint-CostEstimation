@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OctoPrint-CostEstimation 0.1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-07-30 17:16+0200\n"
-"PO-Revision-Date: 2017-07-30 17:17+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2017-08-19 11:51+0200\n"
+"PO-Revision-Date: 2017-08-19 11:51+0200\n"
+"Last-Translator: Sven Lohrmann <malnvenshorn@gmail.com>\n"
 "Language: de\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -30,72 +30,35 @@ msgstr ""
 "Geschätzte Druckkosten basierend auf der benötigten Menge an Filamant und der "
 "Druckzeit"
 
-#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:5
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:4
-msgid "Manage Filament"
-msgstr "Filament verwalten"
-
-#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:12
-msgid "New"
-msgstr "Neu"
-
-#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:13
-msgid "Delete"
-msgstr "Löschen"
-
-#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:21
-msgid "Name"
-msgstr "Name"
-
-#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:30
-msgid "Price"
-msgstr "Preis"
-
-#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:40
-msgid "Weight"
-msgstr "Gewicht"
-
-#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:50
-msgid "Density"
-msgstr "Dichte"
-
-#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:60
-msgid "Diameter"
-msgstr "Durchmesser"
-
-#: octoprint_costestimation/templates/costestimation_filamentdialog.jinja2:73
-msgid "Close"
-msgstr "Schließen"
-
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:7
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:3
 msgid "Filament"
 msgstr "Filament"
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:11
-msgid "Tool"
-msgstr "Werkzeug"
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:5
+msgid "The settings can be found in the"
+msgstr "Die Einstellungen befinden sich im"
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:18
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:7
 msgid "Operating Cost"
 msgstr "Betriebskosten"
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:21
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:10
 msgid "Power consumption"
 msgstr "Stromverbrauch"
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:31
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:20
 msgid "Electricity cost"
 msgstr "Stromkosten"
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:40
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:29
 msgid "Appearance"
 msgstr "Aussehen"
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:43
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:32
 msgid "Currency symbol"
 msgstr "Währungssymbol"
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:49
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:38
 #, python-format
 msgid ""
 "Format string that allows control of symbol position (%%v = value, %%s = symbol)"
@@ -103,11 +66,11 @@ msgstr ""
 "Formatierungsstring zum festlegen der Position des Währungssymbols (%%v = Wert, "
 "%%s = Symbol)"
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:50
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:39
 msgid "String format"
 msgstr "Stringformat"
 
-#: octoprint_costestimation/templates/costestimation_settings.jinja2:59
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:48
 msgid "Show estimated cost only if logged in"
 msgstr "Zeige Kosten nur wenn eingeloggt"
 
@@ -119,3 +82,33 @@ msgstr "Zeige Kosten nur wenn eingeloggt"
 
 #~ msgid "Format"
 #~ msgstr "Format"
+
+#~ msgid "Manage Filament"
+#~ msgstr "Filament verwalten"
+
+#~ msgid "New"
+#~ msgstr "Neu"
+
+#~ msgid "Delete"
+#~ msgstr "Löschen"
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "Price"
+#~ msgstr "Preis"
+
+#~ msgid "Weight"
+#~ msgstr "Gewicht"
+
+#~ msgid "Density"
+#~ msgstr "Dichte"
+
+#~ msgid "Diameter"
+#~ msgstr "Durchmesser"
+
+#~ msgid "Close"
+#~ msgstr "Schließen"
+
+#~ msgid "Tool"
+#~ msgstr "Werkzeug"
