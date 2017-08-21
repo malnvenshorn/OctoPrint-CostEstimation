@@ -34,8 +34,8 @@ $(function() {
             for (var tool = 0; tool < jobFilament.length; ++tool) {
                 if (spoolData[tool] === undefined) continue;  // skip tools with no selected spool
 
-                var costOfFilament = spoolData[tool].profile.cost;
-                var weightOfFilament =  spoolData[tool].profile.weight;
+                var costOfFilament = spoolData[tool].cost;
+                var weightOfFilament =  spoolData[tool].weight;
                 var densityOfFilament = spoolData[tool].profile.density;
                 var diameterOfFilament = spoolData[tool].profile.diameter;
                 var costPerWeight = costOfFilament / weightOfFilament;
