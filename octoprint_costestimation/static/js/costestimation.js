@@ -31,7 +31,10 @@ $(function() {
 
             // calculating filament cost
             var filamentCost = 0;
-            for (var tool = 0; tool < jobFilament.length; ++tool) {
+            for (var i = 0; i < jobFilament.length; ++i) {
+                var result = /(\d+)/.exec(jobFilament[i].name()); // extract tool id from name
+                var tool = result === null ? 0 : result[1];
+
                 if (spoolData[tool] === undefined) continue;  // skip tools with no selected spool
 
                 var costOfFilament = spoolData[tool].cost;
@@ -39,7 +42,7 @@ $(function() {
                 var densityOfFilament = spoolData[tool].profile.density;
                 var diameterOfFilament = spoolData[tool].profile.diameter;
                 var costPerWeight = costOfFilament / weightOfFilament;
-                var filamentLength = jobFilament[tool].data().length;
+                var filamentLength = jobFilament[i].data().length;
                 var filamentVolume = self.calculateVolume(filamentLength, diameterOfFilament) / 1000;
 
                 filamentCost += costPerWeight * filamentVolume * densityOfFilament;
