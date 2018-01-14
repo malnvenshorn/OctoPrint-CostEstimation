@@ -8,10 +8,10 @@
                 <input type="checkbox" data-bind="checked: $root.settings.settings.plugins.costestimation.useFilamentManager">
                 {{ _('Use <a target="_blank" href="https://github.com/malnvenshorn/OctoPrint-FilamentManager">Filament Manager Plugin</a>') }}
                 <!-- ko if: $root.filamentManager !== null -->
-                <span class="text-success">(installed)</span>
+                <span class="text-success">{{ _("(installed)") }}</span>
                 <!-- /ko -->
                 <!-- ko if: $root.filamentManager === null -->
-                <span class="text-error">(not installed)</span>
+                <span class="text-error">{{ _("(not installed)") }}</span>
                 <!-- /ko -->
             </label>
         </div>
