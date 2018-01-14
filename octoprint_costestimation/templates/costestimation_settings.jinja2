@@ -2,7 +2,66 @@
 
     <h3>{{ _("Filament") }}</h3>
 
-    {{ _("The settings can be found in the") }} <a href="#settings_plugin_filamentmanager" data-toggle="tab" style="" data-bind="click: function() {$('#settings_plugin_filamentmanager_link').addClass('active'); $('#settings_plugin_costestimation_link').removeClass('active');}">Filament Manager</a>
+    <div class="control-group">
+        <div class="controls">
+            <label class="checkbox">
+                <input type="checkbox" data-bind="checked: $root.settings.settings.plugins.costestimation.useFilamentManager">
+                {{ _('Use <a target="_blank" href="https://github.com/malnvenshorn/OctoPrint-FilamentManager">Filament Manager Plugin</a>') }}
+                <!-- ko if: $root.filamentManager !== null -->
+                <span class="text-success">{{ _("(installed)") }}</span>
+                <!-- /ko -->
+                <!-- ko if: $root.filamentManager === null -->
+                <span class="text-error">{{ _("(not installed)") }}</span>
+                <!-- /ko -->
+            </label>
+        </div>
+    </div>
+
+    <div data-bind="visible: $root.showFilamentGroup">
+        <div class="control-group">
+            <label class="control-label">{{ _('Price') }}</label>
+            <div class="controls">
+                <div class="input-append">
+                    <input type="number" step="0.01" min="0" class="input-mini text-right"
+                        data-bind="value: $root.settings.settings.plugins.costestimation.costOfFilament">
+                    <span class="add-on">€</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">{{ _('Weight') }}</label>
+            <div class="controls">
+                <div class="input-append">
+                    <input type="number" step="1" min="0" class="input-mini text-right"
+                        data-bind="value: $root.settings.settings.plugins.costestimation.weightOfFilament">
+                    <span class="add-on">g</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">{{ _('Density') }}</label>
+            <div class="controls">
+                <div class="input-append">
+                    <input type="number" step="0.01" min="0" class="input-mini text-right"
+                        data-bind="value: $root.settings.settings.plugins.costestimation.densityOfFilament">
+                    <span class="add-on">g/cm<sup>3</sup></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">{{ _('Diameter') }}</label>
+            <div class="controls">
+                <div class="input-append">
+                    <input type="number" step="0.01" min="0" class="input-mini text-right"
+                        data-bind="value: $root.settings.settings.plugins.costestimation.diameterOfFilament">
+                    <span class="add-on">mm</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <h3>{{ _("Operating Cost") }}</h3>
 
@@ -10,7 +69,7 @@
         <label class="control-label">{{ _('Power consumption') }}</label>
         <div class="controls">
             <div class="input-append">
-                <input type="number" step="0.01" min="0" class="input-mini text-right" data-bind="value: settings.plugins.costestimation.powerConsumption">
+                <input type="number" step="0.01" min="0" class="input-mini text-right" data-bind="value: $root.settings.settings.plugins.costestimation.powerConsumption">
                 <span class="add-on">kW</span>
             </div>
         </div>
@@ -20,8 +79,40 @@
         <label class="control-label">{{ _('Electricity cost') }}</label>
         <div class="controls">
             <div class="input-append">
-                <input type="number" step="0.01" min="0" class="input-mini text-right"data-bind="value: settings.plugins.costestimation.costOfElectricity">
-                <span class="add-on"><span data-bind="text: settings.plugins.costestimation.currency"></span>/kWh</span>
+                <input type="number" step="0.01" min="0" class="input-mini text-right"data-bind="value: $root.settings.settings.plugins.costestimation.costOfElectricity">
+                <span class="add-on"><span data-bind="text: $root.settings.settings.plugins.costestimation.currency"></span>/kWh</span>
+            </div>
+        </div>
+    </div>
+
+    <h3>{{ _("Printer Cost") }}</h3>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Purchase price') }}</label>
+        <div class="controls">
+            <div class="input-append">
+                <input type="number" step="0.01" min="0" class="input-mini text-right" data-bind="value: $root.settings.settings.plugins.costestimation.priceOfPrinter">
+                <span class="add-on" data-bind="text: $root.settings.settings.plugins.costestimation.currency"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Estimated lifespan') }}</label>
+        <div class="controls">
+            <div class="input-append">
+                <input type="number" step="1" min="0" class="input-mini text-right" data-bind="value: $root.settings.settings.plugins.costestimation.lifespanOfPrinter">
+                <span class="add-on">h</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Maintenance costs') }}</label>
+        <div class="controls">
+            <div class="input-append">
+                <input type="number" step="0.01" min="0" class="input-mini text-right" data-bind="value: $root.settings.settings.plugins.costestimation.maintenanceCosts">
+                <span class="add-on"><span data-bind="text: $root.settings.settings.plugins.costestimation.currency"></span>/h</span>
             </div>
         </div>
     </div>
@@ -31,21 +122,21 @@
     <div class="control-group">
         <label class="control-label">{{ _('Currency symbol') }}</label>
         <div class="controls">
-            <input type="text" class="input-mini text-center" data-bind="value: settings.plugins.costestimation.currency, valueUpdate: 'afterkeydown'">
+            <input type="text" class="input-mini text-center" data-bind="value: $root.settings.settings.plugins.costestimation.currency, valueUpdate: 'afterkeydown'">
         </div>
     </div>
 
     <div class="control-group" title="{{ _('Format string that allows control of symbol position (%%v = value, %%s = symbol)') }}">
         <label class="control-label">{{ _('String format') }}</label>
         <div class="controls">
-            <input type="text" class="input-mini text-center" data-bind="value: settings.plugins.costestimation.currencyFormat">
+            <input type="text" class="input-mini text-center" data-bind="value: $root.settings.settings.plugins.costestimation.currencyFormat">
         </div>
     </div>
 
     <div class="control-group">
         <div class="controls">
             <label class="checkbox">
-                <input type="checkbox" data-bind="checked: settings.plugins.costestimation.requiresLogin">{{ _("Show estimated cost only if logged in") }}
+                <input type="checkbox" data-bind="checked: $root.settings.settings.plugins.costestimation.requiresLogin">{{ _("Show estimated cost only if logged in") }}
             </label>
         </div>
     </div>

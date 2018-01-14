@@ -16,11 +16,19 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
 
     def get_settings_defaults(self):
         return dict(
-            powerConsumption=0.2,       # kWh
-            costOfElectricity=0.25,     # €/kWh
+            weightOfFilament=1000,       # g
+            costOfFilament=20,           # €
+            densityOfFilament=1.32,      # g/cm³
+            diameterOfFilament=1.75,     # mm
+            powerConsumption=0.2,        # kWh
+            costOfElectricity=0.25,      # €/kWh
             currency="€",
-            currencyFormat="%v %s",     # %v - value, %s - currency symbol
-            requiresLogin=False
+            currencyFormat="%v %s",      # %v - value, %s - currency symbol
+            requiresLogin=False,
+            useFilamentManager=True,
+            priceOfPrinter=0,            # €
+            lifespanOfPrinter=0,         # h
+            maintenanceCosts=0,          # €/h
         )
 
     def get_settings_version(self):
@@ -49,7 +57,7 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
 
     def get_template_configs(self):
         return [
-            dict(type="settings", custom_bindings=False)
+            dict(type="settings")
         ]
 
     # AssetPlugin
