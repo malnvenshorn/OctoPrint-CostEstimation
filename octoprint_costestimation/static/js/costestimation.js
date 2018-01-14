@@ -53,10 +53,10 @@ $(function() {
                     densityOfFilament = spoolData[tool].profile.density;
                     diameterOfFilament = spoolData[tool].profile.diameter;
                 } else {
-                    costOfFilament = pluginSettings.costOfFilament();
-                    weightOfFilament =  pluginSettings.weightOfFilament();
-                    densityOfFilament = pluginSettings.densityOfFilament();
-                    diameterOfFilament = pluginSettings.diameterOfFilament();
+                    costOfFilament = parseFloat(pluginSettings.costOfFilament());
+                    weightOfFilament = parseFloat(pluginSettings.weightOfFilament());
+                    densityOfFilament = parseFloat(pluginSettings.densityOfFilament());
+                    diameterOfFilament = parseFloat(pluginSettings.diameterOfFilament());
                 }
 
                 var costPerWeight = weightOfFilament > 0 ? costOfFilament / weightOfFilament : 0;
@@ -67,17 +67,17 @@ $(function() {
             }
 
             // calculating electricity cost
-            var powerConsumption = pluginSettings.powerConsumption();
-            var costOfElectricity = pluginSettings.costOfElectricity();
+            var powerConsumption = parseFloat(pluginSettings.powerConsumption());
+            var costOfElectricity = parseFloat(pluginSettings.costOfElectricity());
             var costPerHour = powerConsumption * costOfElectricity;
             var estimatedPrintTime = self.printerState.estimatedPrintTime() / 3600;  // h
             var electricityCost = costPerHour * estimatedPrintTime;
 
             // calculating printer cost
-            var purchasePrice = pluginSettings.priceOfPrinter();
-            var lifespan = pluginSettings.lifespanOfPrinter();
+            var purchasePrice = parseFloat(pluginSettings.priceOfPrinter());
+            var lifespan = parseFloat(pluginSettings.lifespanOfPrinter());
             var depreciationPerHour = lifespan > 0 ? purchasePrice / lifespan : 0;
-            var maintenancePerHour = pluginSettings.maintenanceCosts();
+            var maintenancePerHour = parseFloat(pluginSettings.maintenanceCosts());
             var printerCost = (depreciationPerHour + maintenancePerHour) * estimatedPrintTime;
 
             // assembling string
