@@ -1,119 +1,113 @@
-# German translations for OctoPrint-CostEstimation.
-# Copyright (C) 2017 ORGANIZATION
+# Translations template for OctoPrint-CostEstimation.
+# Copyright (C) 2018 The OctoPrint Project
 # This file is distributed under the same license as the
 # OctoPrint-CostEstimation project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: OctoPrint-CostEstimation 0.1.0\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"Project-Id-Version: OctoPrint-CostEstimation 2.0.1\n"
+"Report-Msgid-Bugs-To: i18n@octoprint.org\n"
 "POT-Creation-Date: 2018-01-14 19:43+0100\n"
-"PO-Revision-Date: 2018-01-14 19:49+0100\n"
-"Last-Translator: Sven Lohrmann <malnvenshorn@gmail.com>\n"
-"Language: de\n"
-"Language-Team: de <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Generator: Poedit 2.0.5\n"
 
 #: octoprint_costestimation/static/js/costestimation.js:98
 msgid "Cost"
-msgstr "Kosten"
+msgstr ""
 
 #: octoprint_costestimation/static/js/costestimation.js:99
 msgid "Estimated print cost based on required quantity of filament and print time"
 msgstr ""
-"Geschätzte Druckkosten basierend auf der benötigten Menge an Filamant und der "
-"Druckzeit"
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:3
 msgid "Filament"
-msgstr "Filament"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:9
 msgid ""
-"Use <a target=\"_blank\" href=\"https://github.com/malnvenshorn/OctoPrint-"
-"FilamentManager\">Filament Manager Plugin</a>"
+"Use <a target=\"_blank\" href=\"https://github.com/malnvenshorn"
+"/OctoPrint-FilamentManager\">Filament Manager Plugin</a>"
 msgstr ""
-"Verwende <a target=\"_blank\" href=\"https://github.com/malnvenshorn/OctoPrint-"
-"FilamentManager\">Filament Manager Plugin</a>"
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:11
 msgid "(installed)"
-msgstr "(installiert)"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:14
 msgid "(not installed)"
-msgstr "(nicht installiert)"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:22
 msgid "Price"
-msgstr "Preis"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:33
 msgid "Weight"
-msgstr "Gewicht"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:44
 msgid "Density"
-msgstr "Dichte"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:55
 msgid "Diameter"
-msgstr "Durchmesser"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:66
 msgid "Operating Cost"
-msgstr "Betriebskosten"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:69
 msgid "Power consumption"
-msgstr "Stromverbrauch"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:79
 msgid "Electricity cost"
-msgstr "Stromkosten"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:88
 msgid "Printer Cost"
-msgstr "Druckerkosten"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:91
 msgid "Purchase price"
-msgstr "Einkaufspreis"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:101
 msgid "Estimated lifespan"
-msgstr "Ungefähre Lebensdauer"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:111
 msgid "Maintenance costs"
-msgstr "Wartungskosten"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:120
 msgid "Appearance"
-msgstr "Aussehen"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:123
 msgid "Currency symbol"
-msgstr "Währungssymbol"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:129
 #, python-format
 msgid ""
-"Format string that allows control of symbol position (%%v = value, %%s = symbol)"
+"Format string that allows control of symbol position (%%v = value, %%s = "
+"symbol)"
 msgstr ""
-"Formatierungsstring zum festlegen der Position des Währungssymbols (%%v = Wert, "
-"%%s = Symbol)"
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:130
 msgid "String format"
-msgstr "Stringformat"
+msgstr ""
 
 #: octoprint_costestimation/templates/costestimation_settings.jinja2:139
 msgid "Show estimated cost only if logged in"
-msgstr "Zeige Kosten nur wenn eingeloggt"
+msgstr ""
+
