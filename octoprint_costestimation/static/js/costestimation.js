@@ -59,7 +59,7 @@ $(function() {
                     diameterOfFilament = pluginSettings.diameterOfFilament();
                 }
 
-                var costPerWeight = costOfFilament / weightOfFilament;
+                var costPerWeight = weightOfFilament > 0 ? costOfFilament / weightOfFilament : 0;
                 var filamentLength = jobFilament[i].data().length;
                 var filamentVolume = self.calculateVolume(filamentLength, diameterOfFilament) / 1000;
 
@@ -73,8 +73,15 @@ $(function() {
             var estimatedPrintTime = self.printerState.estimatedPrintTime() / 3600;  // h
             var electricityCost = costPerHour * estimatedPrintTime;
 
+            // calculating printer cost
+            var purchasePrice = pluginSettings.priceOfPrinter();
+            var lifespan = pluginSettings.lifespanOfPrinter();
+            var depreciationPerHour = lifespan > 0 ? purchasePrice / lifespan : 0;
+            var maintenancePerHour = pluginSettings.maintenanceCosts();
+            var printerCost = (depreciationPerHour + maintenancePerHour) * estimatedPrintTime;
+
             // assembling string
-            var estimatedCost = filamentCost + electricityCost;
+            var estimatedCost = filamentCost + electricityCost + printerCost;
             var currencySymbol = pluginSettings.currency();
             var currencyFormat = pluginSettings.currencyFormat();
             return currencyFormat.replace("%v", estimatedCost.toFixed(2)).replace("%s", currencySymbol);
