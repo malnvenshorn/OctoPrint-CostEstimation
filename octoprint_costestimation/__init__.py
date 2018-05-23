@@ -43,9 +43,8 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
 
             for entry in settings:
                 value = self._settings.get([entry])
-                if value is not None:
-                    if filaments is not None:
-                        filaments[0][entry.replace("OfFilament", "")] = value
+                if value is not None and filaments is not None:
+                    filaments[0][entry.replace("OfFilament", "")] = value
                     self._settings.set([entry], None)
 
             self._settings.set(["filaments"], filaments)
