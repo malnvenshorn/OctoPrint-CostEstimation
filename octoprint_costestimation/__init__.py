@@ -36,19 +36,20 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
 
     def on_settings_migrate(self, target, current=None):
         if current is None or current == 1:
-            # migrate old settings
+            # updating from version 0.x
             settings = ["weightOfFilament", "costOfFilament", "densityOfFilament", "diameterOfFilament"]
 
             filaments = self._settings.get(["filaments"])
 
             for entry in settings:
                 value = self._settings.get([entry])
-                if value is not None:
+                if value is not None and filaments is not None:
                     filaments[0][entry.replace("OfFilament", "")] = value
                     self._settings.set([entry], None)
 
             self._settings.set(["filaments"], filaments)
         elif current == 2:
+            # updating from version 1.x
             self._settings.set(["filaments"], None)
             self._settings.set(["selectedFilament"], None)
             self._settings.set(["lastId"], None)
