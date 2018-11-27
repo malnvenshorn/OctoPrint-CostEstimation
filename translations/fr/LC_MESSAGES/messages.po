@@ -1,0 +1,121 @@
+# French translations for OctoPrint-CostEstimation.
+# Copyright (C) 2018 The OctoPrint Project
+# This file is distributed under the same license as the
+# OctoPrint-CostEstimation project.
+# FIRST AUTHOR E. REMETTER, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OctoPrint-CostEstimation 2.0.1\n"
+"Report-Msgid-Bugs-To: i18n@octoprint.org\n"
+"POT-Creation-Date: 2018-01-14 19:43+0100\n"
+"PO-Revision-Date: 2018-11-04 08:56+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+"X-Generator: Poedit 2.0.6\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr_FR\n"
+
+#: octoprint_costestimation/static/js/costestimation.js:98
+msgid "Cost"
+msgstr "Coût"
+
+#: octoprint_costestimation/static/js/costestimation.js:99
+msgid ""
+"Estimated print cost based on required quantity of filament and print time"
+msgstr ""
+"Coût d'impression estimé basé sur la quantité de filament et le temps "
+"d'impression"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:3
+msgid "Filament"
+msgstr "Filament"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:9
+msgid ""
+"Use <a target=\"_blank\" href=\"https://github.com/malnvenshorn/OctoPrint-"
+"FilamentManager\">Filament Manager Plugin</a>"
+msgstr ""
+"Utiliser le plugin <a target=\"_blank\" href=\"https://github.com/malnvenshorn/"
+"OctoPrint-FilamentManager\">Filament Manager</a>"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:11
+msgid "(installed)"
+msgstr "(installé)"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:14
+msgid "(not installed)"
+msgstr "(non installé)"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:22
+msgid "Price"
+msgstr "Prix"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:33
+msgid "Weight"
+msgstr "Poids"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:44
+msgid "Density"
+msgstr "Densité"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:55
+msgid "Diameter"
+msgstr "Diamètre"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:66
+msgid "Operating Cost"
+msgstr "Coût de fonctionnement"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:69
+msgid "Power consumption"
+msgstr "Consommation électrique"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:79
+msgid "Electricity cost"
+msgstr "Prix de l'électrité"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:88
+msgid "Printer Cost"
+msgstr "Prix de l'imprimante"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:91
+msgid "Purchase price"
+msgstr "Prix d'achat"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:101
+msgid "Estimated lifespan"
+msgstr "Durée de vie estimée"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:111
+msgid "Maintenance costs"
+msgstr "Coûts de maintenance"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:120
+msgid "Appearance"
+msgstr "Apparence"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:123
+msgid "Currency symbol"
+msgstr "Symbole monétaire"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:129
+#, python-format
+msgid ""
+"Format string that allows control of symbol position (%%v = value, %%s = "
+"symbol)"
+msgstr ""
+"Chaîne formatée autorisant le contrôle de la position du symbole (%%v = "
+"valeur, %%s = symbole)"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:130
+msgid "String format"
+msgstr "Format de chaîne"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:139
+msgid "Show estimated cost only if logged in"
+msgstr "Afficher le coût estimé seulement si connecté"
