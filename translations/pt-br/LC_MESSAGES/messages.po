@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Untitled project\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-05 17:44-0300\n"
+"PO-Revision-Date: 2019-06-05 17:56-0300\n"
+"Last-Translator: Hector Perez Baranda\n"
+"Language-Team: Brazilian Portuguese\n"
+"Language: pt-BR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz\n"
+"X-Loco-Source-Locale: en\n"
+"X-Loco-Project-Id: 69944\n"
+"X-Loco-Api-Version: 1.0.23 20190531-1"
+
+#: octoprint_costestimation/static/js/costestimation.js:98
+#: loco:5cf829ef4d3dd74ab8039fc1
+msgid "Cost"
+msgstr "Custo"
+
+#: octoprint_costestimation/static/js/costestimation.js:99
+#: loco:5cf829ef4d3dd74ab8039fc2
+msgid ""
+"Estimated print cost based on required quantity of filament and print time"
+msgstr ""
+"Custo de impressão estimado com base na quantidade necessária de filamentos "
+"e no tempo de impressão"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:3
+#: loco:5cf829ef4d3dd74ab8039fc3
+msgid "Filament"
+msgstr "Filamento"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:9
+#: loco:5cf829ef4d3dd74ab8039fc4
+msgid ""
+"Use <a target=\"_blank\" href=\"https://github.com/malnvenshorn/OctoPrint-"
+"FilamentManager\">Filament Manager Plugin</a>"
+msgstr ""
+"Use <a target=\"_blank\" href=\"https://github.com/malnvenshorn/OctoPrint-"
+"FilamentManager\">Plugin do Gerenciador de Filamento </a>"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:11
+#: loco:5cf829ef4d3dd74ab8039fc5
+msgid "(installed)"
+msgstr "(instalado)"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:14
+#: loco:5cf829ef4d3dd74ab8039fc6
+msgid "(not installed)"
+msgstr "(não instalado)"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:22
+#: loco:5cf829ef4d3dd74ab8039fc7
+msgid "Price"
+msgstr "Preço"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:33
+#: loco:5cf829ef4d3dd74ab8039fc8
+msgid "Weight"
+msgstr "Peso"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:44
+#: loco:5cf829ef4d3dd74ab8039fc9
+msgid "Density"
+msgstr "Densidade"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:55
+#: loco:5cf829ef4d3dd74ab8039fca
+msgid "Diameter"
+msgstr "Diametro"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:66
+#: loco:5cf829ef4d3dd74ab8039fcb
+msgid "Operating Cost"
+msgstr "Custo de Operação"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:69
+#: loco:5cf829ef4d3dd74ab8039fcc
+msgid "Power consumption"
+msgstr "Consumo de Energía"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:79
+#: loco:5cf829ef4d3dd74ab8039fcd
+msgid "Electricity cost"
+msgstr "Custo da Electricidade"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:88
+#: loco:5cf829ef4d3dd74ab8039fce
+msgid "Printer Cost"
+msgstr "Custo de Impressão"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:91
+#: loco:5cf829ef4d3dd74ab8039fcf
+msgid "Purchase price"
+msgstr "Preço de compra"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:101
+#: loco:5cf829ef4d3dd74ab8039fd0
+msgid "Estimated lifespan"
+msgstr "Vida útil estimada"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:111
+#: loco:5cf829ef4d3dd74ab8039fd1
+msgid "Maintenance costs"
+msgstr "Custo de manuntenção"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:120
+#: loco:5cf829ef4d3dd74ab8039fd2
+msgid "Appearance"
+msgstr "Aparência"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:123
+#: loco:5cf829ef4d3dd74ab8039fd3
+msgid "Currency symbol"
+msgstr "R$"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:129
+#: loco:5cf829ef4d3dd74ab8039fd4
+#, python-format
+msgid ""
+"Format string that allows control of symbol position (%%v = value, %%s = "
+"symbol)"
+msgstr ""
+"Formatar string que permite controlar a posição do símbolo (%%v = value, %%s "
+"= symbol)"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:130
+#: loco:5cf829ef4d3dd74ab8039fd5
+msgid "String format"
+msgstr "Formato de String"
+
+#: octoprint_costestimation/templates/costestimation_settings.jinja2:139
+#: loco:5cf829ef4d3dd74ab8039fd6
+msgid "Show estimated cost only if logged in"
+msgstr "Mostrar custo estimado somente se conectado"
