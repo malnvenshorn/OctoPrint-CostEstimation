@@ -6,7 +6,7 @@ from setuptools import setup
 plugin_identifier = "costestimation"
 plugin_package = "octoprint_costestimation"
 plugin_name = "OctoPrint-CostEstimation"
-plugin_version = "2.1.2"
+plugin_version = "2.1.3"
 plugin_description = "Displays the estimated print cost for the loaded model"
 plugin_author = "Sven Lohrmann"
 plugin_author_email = "malnvenshorn@mailbox.org"
