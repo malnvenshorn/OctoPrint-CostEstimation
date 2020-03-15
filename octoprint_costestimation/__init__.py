@@ -89,6 +89,7 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
 
 
 __plugin_name__ = "Cost Estimation"
+__plugin_pythoncompat__ = ">=2.7,<4"
 
 
 def __plugin_load__():
