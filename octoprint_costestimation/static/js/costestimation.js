@@ -14,6 +14,7 @@ $(function() {
         self.settings = parameters[1];
         self.loginState = parameters[2];
         self.filamentManager = parameters[3];
+        self.spoolManager = parameters[4];
 
         self.showEstimatedCost = ko.pureComputed(function() {
             return self.settings.settings.plugins.costestimation.requiresLogin() ?
@@ -21,8 +22,10 @@ $(function() {
         });
 
         self.showFilamentGroup = ko.pureComputed(function() {
-            return self.filamentManager === null || !self.settings.settings.plugins.costestimation.useFilamentManager();
-        })
+            var filamentManagerEnabled = self.filamentManager === null || !self.settings.settings.plugins.costestimation.useFilamentManager();
+            var spoolManagerEnabled = self.spoolManager === null || !self.settings.settings.plugins.costestimation.useSpoolManager();
+            return !filamentManagerEnabled && !spoolManagerEnabled;
+        });
 
         self.estimatedCostString = ko.pureComputed(function() {
             if (!self.showEstimatedCost()) return "-";
@@ -35,6 +38,11 @@ $(function() {
 
             if (self.filamentManager !== null && pluginSettings.useFilamentManager()) {
                 spoolData = self.filamentManager.selectedSpools();
+            } else if (self.spoolManager !== null && pluginSettings.useSpoolManager()) {
+                var selectedSpool = self.spoolManager.selectedSpoolForSidebar();
+                if (selectedSpool) {
+                    spoolData = [self.parseSpoolManagerData(self.spoolManager)];
+                }
             }
 
             // calculating filament cost
@@ -100,13 +108,35 @@ $(function() {
                 element.before("<div id='costestimation_string' data-bind='visible: showEstimatedCost()'><span title='" + text + "'>" + name + "</span>: <strong data-bind='text: estimatedCostString'></strong></div>");
             }
         };
+
+        self.parseSpoolManagerData = function(spoolManager = null) {
+            if (!spoolManager) return null;
+            var selectedSpool = spoolManager.selectedSpoolForSidebar();
+            if (!selectedSpool) return null;
+            return {
+                id: selectedSpool.databaseId() || 0,
+                cost: selectedSpool.cost() || 0,
+                name: selectedSpool.displayName() || "",
+                profile: {
+                    id: selectedSpool.databaseId() || 0,
+                    density: selectedSpool.density() || 0,
+                    diameter: selectedSpool.diameter() || 0,
+                    material: selectedSpool.material() || "",
+                    vendor: selectedSpool.vendor() || ""
+                },
+                temp_offset: 0,
+                used: selectedSpool.usedWeight() ? parseInt(selectedSpool.usedWeight(),10) : 0,
+                weight: selectedSpool.totalWeight() ? parseInt(selectedSpool.totalWeight(),10) : 0,
+            };
+        };
     }
 
     OCTOPRINT_VIEWMODELS.push({
         construct: CostEstimationViewModel,
         dependencies: ["printerStateViewModel", "settingsViewModel",
-                       "loginStateViewModel", "filamentManagerViewModel"],
-        optional: ["filamentManagerViewModel"],
+                       "loginStateViewModel", "filamentManagerViewModel",
+                       "spoolManagerViewModel"],
+        optional: ["filamentManagerViewModel","spoolManagerViewModel"],
         elements: ["#costestimation_string", "#settings_plugin_costestimation"]
     });
 });

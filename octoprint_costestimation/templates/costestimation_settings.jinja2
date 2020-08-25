@@ -15,6 +15,18 @@
                 <!-- /ko -->
             </label>
         </div>
+        <div class="controls">
+            <label class="checkbox">
+                <input type="checkbox" data-bind="checked: $root.settings.settings.plugins.costestimation.useSpoolManager">
+                {{ _('Use <a target="_blank" href="https://github.com/OllisGit/OctoPrint-SpoolManager">Spool Manager Plugin</a>') }}
+                <!-- ko if: $root.spoolManager !== null -->
+                <span class="text-success">{{ _("(installed)") }}</span>
+                <!-- /ko -->
+                <!-- ko if: $root.spoolManager === null -->
+                <span class="text-error">{{ _("(not installed)") }}</span>
+                <!-- /ko -->
+            </label>
+        </div>
     </div>
 
     <div data-bind="visible: $root.showFilamentGroup">

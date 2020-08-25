@@ -26,6 +26,7 @@ class CostEstimationPlugin(octoprint.plugin.SettingsPlugin,
             currencyFormat="%v %s",      # %v - value, %s - currency symbol
             requiresLogin=False,
             useFilamentManager=True,
+            useSpoolManager=False,
             priceOfPrinter=0,            # €
             lifespanOfPrinter=0,         # h
             maintenanceCosts=0,          # €/h
