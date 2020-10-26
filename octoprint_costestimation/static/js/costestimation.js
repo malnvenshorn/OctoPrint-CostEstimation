@@ -22,9 +22,9 @@ $(function() {
         });
 
         self.showFilamentGroup = ko.pureComputed(function() {
-            var filamentManagerEnabled = self.filamentManager === null || !self.settings.settings.plugins.costestimation.useFilamentManager();
-            var spoolManagerEnabled = self.spoolManager === null || !self.settings.settings.plugins.costestimation.useSpoolManager();
-            return !filamentManagerEnabled && !spoolManagerEnabled;
+            var filamentManagerDisabled = self.filamentManager === null || !self.settings.settings.plugins.costestimation.useFilamentManager();
+            var spoolManagerDisabled = self.spoolManager === null || !self.settings.settings.plugins.costestimation.useSpoolManager();
+            return !filamentManagerDisabled && !spoolManagerDisabled;
         });
 
         self.estimatedCostString = ko.pureComputed(function() {
